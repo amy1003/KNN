@@ -14,7 +14,7 @@ if __name__ == "__main__":
                         help='test code using UserAvg')
     args = parser.parse_args()
 
-    if (args.test == 0):
+    if (args.code_test == 0):
         obj = pyreclab.UserKnn(dataset=args.train,
                                dlmchar=b'\s',
                                header=False,
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     knn = 10
     similarity = 'cosine'
 
-    if (args.test == 0):
+    if (args.code_test == 0):
         obj.train(knn, similarity)
     else:
         obj.train()

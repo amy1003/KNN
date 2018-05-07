@@ -20,7 +20,7 @@ In linux this is accomplished by (from the dataset directory):
 *Use Python 3 to ensure compatibility, although Python 2 should work too.*
 
     ```
-    python preprocess.py
+    python src/preprocess.py
     ```
 
 ## Train and predict
