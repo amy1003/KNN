@@ -16,14 +16,14 @@ if __name__ == "__main__":
 
     if (args.code_test == 0):
         obj = pyreclab.UserKnn(dataset=args.train,
-                               dlmchar=b'\s',
+                               dlmchar=b' ',
                                header=False,
                                usercol=0,
                                itemcol=1,
                                ratingcol=3)
     else:
         obj = pyreclab.UserAvg(dataset=args.train,
-                               dlmchar=b'\s',
+                               dlmchar=b' ',
                                header=False,
                                usercol=0,
                                itemcol=1,
