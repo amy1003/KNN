@@ -7,11 +7,11 @@
 1. Place the netflix challenge data into dataset directory.
     
 If you already have them elsewhere, create a symbolic link. 
-In linux this is accomplished by (from the root directory):
+In linux this is accomplished by (from the dataset directory):
 
     ```
-    ln -s <path to um/> ./dataset/um
-    ln -s <path to mu/> ./dataset/mu
+    ln -s <path to um/> ./um
+    ln -s <path to mu/> ./mu
     ```
 
 2. Run the preprocessing script to split the data into `training`, 
