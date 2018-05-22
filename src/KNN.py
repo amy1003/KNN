@@ -1,6 +1,7 @@
 
 import pyreclab
 import argparse
+import time
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='KNN')
@@ -35,11 +36,33 @@ if __name__ == "__main__":
     similarity = 'pearson'
 
     if (args.code_test == 0):
+        start = time.clock()
         print("obj.train knn, similarity")
         obj.train(knn, similarity)
+        end = time.clock()
+        print( 'training time: ' + str( end - start ) )
     else:
+        start = time.clock()
         print("obj.train")
         obj.train()
+        end = time.clock()
+        print( 'training time: ' + str( end - start ) )
+
+    # Test
+    print("Testing starting")
+    start = time.clock()
+    predlist, mae, rmse = obj.test( input_file = 'dataset/um/valid.dta',
+                                    dlmchar = b' ',
+                                    header = False,
+                                    usercol = 0,
+                                    itemcol = 1,
+                                    ratingcol = 3,
+                                    output_file = 'result/test_predictions.dta')
+    start = time.clock()
+    print( 'testing time: ' + str( end - start ) )
+
+    print( 'MAE: ' + str( mae ) )
+    print( 'RMSE: ' + str( rmse ) )
 
     # Predict
     print("Predictions starting")
