@@ -30,18 +30,23 @@ if __name__ == "__main__":
                                ratingcol=3)
 
     # Train
+    print("Training starting")
     knn = 10
     similarity = 'cosine'
 
     if (args.code_test == 0):
+        print("obj.train knn, similarity")
         obj.train(knn, similarity)
     else:
+        print("obj.train")
         obj.train()
 
     # Predict
+    print("Predictions starting")
     with open(args.qual, 'r') as qual:
         with open(args.output, 'w') as pred:
             for line in qual:
+                print("Predicting...")
                 x = line.split(' ')
                 r = obj.predict(x[0], x[1])
                 pred.write(str(r) + "\n")
