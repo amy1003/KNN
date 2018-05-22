@@ -31,8 +31,8 @@ if __name__ == "__main__":
 
     # Train
     print("Training starting")
-    knn = 10
-    similarity = 'cosine'
+    knn = 100
+    similarity = 'pearson'
 
     if (args.code_test == 0):
         print("obj.train knn, similarity")
